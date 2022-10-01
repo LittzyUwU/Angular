@@ -9,6 +9,13 @@ import { RestaComponent } from './calculos/resta/resta.component';
 import {FormsModule} from '@angular/forms'; //importante xd
 import { ProductListComponent } from './product/product-list/product-list.component';
 import { ProductoFilterPipe } from './product/producto-filter.pipe';
+import { MenuComponent } from './menu/menu.component';
+
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import { TablaComponent } from './calculos/tabla/tabla.component';
+import { CinepolisComponent } from './calculos/cinepolis/cinepolis.component';
 
 @NgModule({
   declarations: [
@@ -16,12 +23,18 @@ import { ProductoFilterPipe } from './product/producto-filter.pipe';
     SumaComponent,
     RestaComponent,
     ProductListComponent,
-    ProductoFilterPipe
+    ProductoFilterPipe,
+    MenuComponent,
+    TablaComponent,
+    CinepolisComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule //importante xd
+    FormsModule, //importante xd
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

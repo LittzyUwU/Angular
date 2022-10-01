@@ -1,0 +1,11 @@
+<div>
+    Ingresa el numero: <input type="text" [(ngModel)]="num"><br>
+   
+    <button type="button" (click)="tablaMulti()">Calcular</button>
+
+</div>
+<div>
+    <span *ngFor="let total of totalA">
+        {{total}} <br>
+    </span>
+</div>
