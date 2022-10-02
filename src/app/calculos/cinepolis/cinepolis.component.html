@@ -1,32 +1,69 @@
-<body href="cinepolis.component.css">
-    <div class="container">
-        <div class="row" >
-            <div class="cool-md-auto">
-            <!--el ngModel es un controlador entre el html y el typescript-->
-            Nombre: <input type="text" [(ngModel)]="nombre" name="nombre"><br>
-            Cantidad Compradores (MAX 5): <input type="text" [(ngModel)]="comprador" name="comprador"><br>
-            Tarjeta Cinepolis: 
-            <!--<select>
-                <option value="--" >--</option>
-                <option value="si" [(ngModel)]="tarjetaSi" name="tarjetaSi">Si</option>
-                <option value="no" [(ngModel)]="tarjetaNo" name="tarjetaNo">No</option>
-            </select><br>-->
-            <input type="radio" value="si" name="tarjeta" [(ngModel)]="tarjetaSi">Si
-            <input type="radio" value="no" name="tarjeta" [(ngModel)]="tarjetaNo">No<br>
-        
-            Cantidad Boletos: <input type="text" [(ngModel)]="boletos" name="boletos"><br><br>
-        
-            <button type="button" (click)="procesar()">Procesar</button>
+<body>
+    <br>
+    <div class="align-items-center " style="text-align: center">
+        <img src="https://www.underconsideration.com/brandnew/archives/cinepolis_logo.png" style=" width: 50rem; height: 15rem;">
+    </div><br>
+
+    <div class="container text-center">
+        <div class="row">
+            <div class="col">
+                <div class="form-floating mb-3">
+                    <input type="name" [(ngModel)]="nombre" class="form-control" id="floatingInput">
+                    <label for="floatingInput">Ingresa tu Nombre</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="floatingInput" [(ngModel)]="compradores">
+                    <label for="floatingInput">Cantidad de Compradores</label>
+                </div>
+                <h4>Cuentas con nuestra tarjeta de Cinepolis?</h4>
+                <div class="form-check" style="text-align: left;">
+                    <input class="form-check-input" type="radio" name="Si" id="Si" [(ngModel)]="tarjetacineco" [value]="true">
+                    <label class="form-check-label">
+                      Si
+                    </label>
+                </div>
+                <div class="form-check" style="text-align: left;">
+                    <input class="form-check-input" type="radio" name="No" id="No" [(ngModel)]="tarjetacineco" [value]="false">
+                    <label class="form-check-label">
+                      No
+                    </label>
+                </div>
+                <a>{{tarjetacineco}}</a>
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="floatingInput" [(ngModel)]="ticketsCantidad">
+                    <label for="floatingInput">Cantidad de Boletos</label>
+                </div>
             </div>
 
-            
-            <div class="cool-md-auto"><br><br>
-                <h1>Comprador Principal: {{nombre}}</h1>
-                <h2>Boletos Comprados: {{boletos}}</h2>
-                <h2>Total: {{total}}</h2>
-                <h2>{{error}}</h2>
+            <div class="col" style="margin-top: 6rem">
+                <div class="form-floating mb-3" style="vertical-align: middle;">
+                    <input type="email" class="form-control" id="floatingInput" [(ngModel)]="total" disabled="true">
+                    <label for="floatingInput">Total</label>
+                </div>
+                <div *ngIf="compraExtra">
+                    <div class="card-body justify-content-center align-items-center text-center"></div>
+                    <h1 class="ticket">Comprado</h1>
+
+                </div>
+                <div *ngIf="error">
+                    <div class="card-form justify-content-center align-items-center text-center">
+                        <h1>No puedes comprar más de 7 boletos por persona </h1>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col">
+                </div>
+                <div class="col">
+                    <br>
+                    <div class="form-floating mb-3" style="vertical-align: middle;">
+                        <button type="button" class="btn btn-secondary" (click)="calculo()">Cálculo</button>
+                    </div>
+                </div>
+                <div class="col">
+                </div>
             </div>
         </div>
     </div>
-
 </body>
