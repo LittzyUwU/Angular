@@ -1,4 +1,5 @@
 export interface IProducto {
+    
     product1:number;
     productName:string;
     description:string;
